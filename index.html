@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Online Exam Portal By Abhishek Bankar</h1>
+    </header>
+
+    <div class="login-signup-container">
+        <h2>Login</h2>
+        <select id="role">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+
+        <h2>Sign Up</h2>
+        <select id="signupRole">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select>
+        <input type="text" id="signupUsername" placeholder="Username" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <button onclick="signUp()">Sign Up</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
