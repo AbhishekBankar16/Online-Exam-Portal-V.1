@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Teacher Dashboard</h1>
+        <nav>
+            <button onclick="goHome()">Home</button>
+            <button onclick="loadExams()">Manage Exams</button>
+            <button onclick="loadResults()">View Results</button> <!-- Add a new button to view results -->
+        </nav>
+    </header>
+
+    <div class="teacher-container">
+        <h2>Create Exam</h2>
+        <input type="text" id="examTitle" placeholder="Exam Title" required>
+        <div id="questionsContainer">
+            <!-- Questions will be dynamically generated here -->
+        </div>
+        <button onclick="addQuestion()">Add Question</button>
+        <button onclick="createExam()">Create Exam</button>
+        <!-- Example button in teacher.html -->
+        <button onclick="editExam(examId)">Edit Exam</button>
+
+        <h2>Notifications</h2>
+        <input type="text" id="notificationText" placeholder="Notification text">
+        <button onclick="addNotification()">Send Notification</button>
+        <div id="notificationList"></div>
+
+        <h2>Exam Results</h2> <!-- Add a new section for exam results -->
+        <div id="results-list"></div> <!-- Add a container to display the results -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

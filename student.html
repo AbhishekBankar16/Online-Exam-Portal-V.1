@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Dashboard</h1>
+        <nav>
+            <button onclick="goHome()">Home</button>
+            <button onclick="loadExams()">View Exams</button>
+            <button onclick="loadNotifications()">View Notifications</button> <!-- Add a new button to view notifications -->
+        </nav>
+    </header>
+
+    <div class="student-container">
+        <h2>Your Notifications</h2>
+        <div id="studentNotificationList"></div>
+
+        <h2>Your Exam Results</h2>
+        <div id="studentResultsList">
+          {{# exams }}
+          <div class="exam-container">
+            <h2>Exam Title: {{ title }}</h2>
+            <p>Created At: {{ createdAt }}</p>
+
+            <form>
+              {{# questions }}
+              <div class="question">
+                <label class="question-label">{{ question }}</label>
+                <ul class="options">
+                  {{# options }}
+                  <li class="option">
+                    <input type="radio" name="option" value="{{ . }}">
+                    <label>{{ . }}</label>
+                  </li>
+                  {{/ options }}
+                </ul>
+              </div>
+              {{/ questions }}
+
+              <button class="submit-button">Submit Exam</button>
+            </form>
+          </div>
+          {{/ exams }}
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
